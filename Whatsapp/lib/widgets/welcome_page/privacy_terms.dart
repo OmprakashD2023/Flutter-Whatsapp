@@ -2,7 +2,8 @@
 import 'package:flutter/material.dart';
 
 //Theme
-import '../../models/colours.dart';
+import '../../theme/extension/custom_theme.dart';
+
 class PrivacyAndTerms extends StatelessWidget {
   const PrivacyAndTerms({super.key});
 
@@ -15,17 +16,17 @@ class PrivacyAndTerms extends StatelessWidget {
       ),
       child: RichText(
         textAlign: TextAlign.center,
-        text: const TextSpan(
+        text: TextSpan(
             text: 'Read our ',
             style: TextStyle(
-              color: Colours.greyDark,
+              color: context.theme.greyColor,
               height: 1.5,
             ),
             children: [
               TextSpan(
                 text: 'Privacy Policy. ',
                 style: TextStyle(
-                  color: Colours.blueDark,
+                  color: context.theme.blueColor,
                 ),
               ),
               TextSpan(
@@ -34,7 +35,7 @@ class PrivacyAndTerms extends StatelessWidget {
               TextSpan(
                 text: 'Terms of Services.',
                 style: TextStyle(
-                  color: Colours.blueDark,
+                  color: context.theme.blueColor,
                 ),
               ),
             ]),

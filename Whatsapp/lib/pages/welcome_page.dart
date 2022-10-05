@@ -7,7 +7,7 @@ import '../widgets/welcome_page/privacy_terms.dart';
 import '../widgets/welcome_page/custom_elevated_btn.dart';
 
 //Theme
-import '../models/colours.dart';
+import '../theme/extension/custom_theme.dart';
 
 class WelcomePage extends StatelessWidget {
 
@@ -26,7 +26,7 @@ class WelcomePage extends StatelessWidget {
                 ),
                 child: Image.asset(
                   'assets/images/circle.png',
-                  color: Colours.greenDark,
+                  color: context.theme.circleImageColor,
                 ),
               ),
             ),
