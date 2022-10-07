@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Colours {
   Colours._();
-  
+
   //GREEN
   static const Color greenDark = Color(0xFF00A884);
   static const Color greenLight = Color(0xFF008069);
@@ -18,4 +18,7 @@ class Colours {
   //BLACK AND WHITE
   static const Color backgroundDark = Color(0xFF111B21);
   static const Color backgroundLight = Color(0xFFFFFFFF);
+
+  //BottomSheetTheme
+  static const greyBackground = Color(0xFF202C33);
 }

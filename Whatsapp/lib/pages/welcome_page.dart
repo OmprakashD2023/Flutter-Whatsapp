@@ -10,7 +10,6 @@ import '../widgets/welcome_page/custom_elevated_btn.dart';
 import '../theme/extension/custom_theme.dart';
 
 class WelcomePage extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +42,9 @@ class WelcomePage extends StatelessWidget {
                 ),
                 PrivacyAndTerms(),
                 CustomElevatedButton(
-                  onPressed: (){},
+                  onPressed: () {
+                    Navigator.pushNamed(context,'/loginPage');
+                  },
                   text: 'AGREE AND CONTINUE',
                 ),
                 const SizedBox(
@@ -58,7 +59,3 @@ class WelcomePage extends StatelessWidget {
     );
   }
 }
-
-
-
-
