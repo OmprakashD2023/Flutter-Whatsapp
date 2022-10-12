@@ -1,6 +1,5 @@
 //Packages
 import 'package:flutter/material.dart';
-
 class CustomElevatedButton extends StatelessWidget {
   final double? buttonWidth;
   final VoidCallback onPressed;

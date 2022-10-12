@@ -1,4 +1,6 @@
+//Packages
 import 'package:flutter/material.dart';
+import 'package:country_picker/country_picker.dart';
 
 //Custom Theme
 import '../../theme/extension/custom_theme.dart';
@@ -18,6 +20,48 @@ class _LoginPageState extends State<LoginPage> {
   late TextEditingController countryNameController;
   late TextEditingController countryCodeController;
   late TextEditingController phoneNumberController;
+
+  showCountryCodePicker() {
+    showCountryPicker(
+      context: context,
+      showPhoneCode: true,
+      favorite: ['IN'],
+      countryListTheme: CountryListThemeData(
+        bottomSheetHeight: 600,
+        backgroundColor: Theme.of(context).backgroundColor,
+        flagSize: 22,
+        borderRadius: BorderRadius.circular(20.0),
+        textStyle: TextStyle(
+          color: context.theme.greyColor,
+        ),
+        inputDecoration: InputDecoration(
+          labelStyle: TextStyle(
+            color: context.theme.greyColor,
+          ),
+          prefixIcon: const Icon(
+            Icons.language,
+            color: Colours.greenDark,
+          ),
+          hintText: "Search country code or name",
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: context.theme.greyColor!.withOpacity(0.2),
+            ),
+          ),
+          focusedBorder: const UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: Colours.greenDark,
+            ),
+          ),
+        ),
+      ),
+      onSelect: (country) {
+        countryNameController.text = country.name;
+        countryCodeController.text = country.phoneCode;
+      },
+    );
+  }
+
   @override
   void initState() {
     countryNameController = TextEditingController(text: "India");
@@ -106,7 +150,7 @@ class _LoginPageState extends State<LoginPage> {
               horizontal: 50,
             ),
             child: CustomTextField(
-              onTap: () {},
+              onTap: showCountryCodePicker,
               readOnly: true,
               controller: countryNameController,
               suffixIcon: Icon(
@@ -125,7 +169,7 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   width: 70.0,
                   child: CustomTextField(
-                    onTap: () {},
+                    onTap: showCountryCodePicker,
                     controller: countryCodeController,
                     prefixText: '+',
                     readOnly: true,
